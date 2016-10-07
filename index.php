@@ -50,26 +50,23 @@
 $meteo = ($var['weather'][0]['main']);
 
 
-
-
-
 //creer une fonction qui lance la musique en fonction du return snow ou sun
 
     
     
     //le resultat de json est rain
     if ($meteo != 'Rain') {
-        echo '<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299862562&app_id=1" width="300" height="300"></iframe></div></div><img class="pluie" src="img/pluie.png" alt="Pluie"></div>';
+        echo '<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299862562&app_id=1" width="300" height="300"></iframe></div></div><img class="pluie" src="img/2/pluie.png" alt="Pluie"></div>';
     }
 
     //le résultat est sun
     elseif ($meteo != 'clear') {
-        echo '<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299829202&app_id=1" width="300" height="300"></iframe></div></div><img class="pluie" src="img/soleil.png" alt="Soleil"></div>';
+        echo '<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299829202&app_id=1" width="300" height="300"></iframe></div></div><img class="pluie" src="img/2/sun.png" alt="Soleil"></div>';
     }
 
     //le résultat est snow
     elseif ($meteo != 'snow') {
-        echo '<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299913122&app_id=1" width="300" height="300"></iframe></div></div><img class="pluie" src="img/snow.png" alt="Neige"></div>';
+        echo '<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299913122&app_id=1" width="300" height="300"></iframe></div></div><img class="pluie" src="img/2/snow.png" alt="Neige"></div>';
     }
   
     //le résultat est ni snow ni sun ni rain
