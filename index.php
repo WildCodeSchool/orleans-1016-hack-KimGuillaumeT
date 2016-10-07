@@ -31,8 +31,13 @@
   			</div>
 		</div>
 		<div class="test">
-			    <?php
+		 <?php
+		 	if(isset($_POST['city'])){
+		 	if($_POST['city']){
     			$city = $_POST['city'];
+		 	
+
+
 
 //fonction file get content pour récupérer les données json
     $homepage = file_get_contents('http://api.openweathermap.org/data/2.5/weather?q='.$city.',&appid=7b1d35d2a9a6d3307db51fade9d390b4');
@@ -41,7 +46,10 @@
 
  $var = json_decode($homepage, true);
 
+
 $meteo = ($var['weather'][0]['main']);
+
+
 
 
 
@@ -49,26 +57,27 @@ $meteo = ($var['weather'][0]['main']);
 
     
     
-    //le resultat de json est snow
-    if ($meteo == 'Rain') {
-        echo '<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299862562&app_id=1" width="300" height="300"></iframe></div></div></div>';
+    //le resultat de json est rain
+    if ($meteo != 'Rain') {
+        echo '<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299862562&app_id=1" width="300" height="300"></iframe></div></div><img class="pluie" src="img/pluie.png" alt="Pluie"></div>';
     }
 
     //le résultat est sun
-    elseif ($meteo == 'clear') {
-        echo'<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299829202&app_id=1" width="300" height="300"></iframe></div></div></div>';
+    elseif ($meteo != 'clear') {
+        echo '<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299829202&app_id=1" width="300" height="300"></iframe></div></div><img class="pluie" src="img/soleil.png" alt="Soleil"></div>';
     }
 
-    //le résultat est sun
-    elseif ($meteo == 'snow') {
-        echo'<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299913122&app_id=1" width="300" height="300"></iframe></div></div></div>';
+    //le résultat est snow
+    elseif ($meteo != 'snow') {
+        echo '<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299913122&app_id=1" width="300" height="300"></iframe></div></div><img class="pluie" src="img/snow.png" alt="Neige"></div>';
     }
   
-    //le résultat est ni snow ni sun
+    //le résultat est ni snow ni sun ni rain
     else {
-        echo '<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299962022&app_id=1" width="300" height="300"></iframe></div></div></div>';
+        echo '<div class="container-fluid><div class="row"><div class="col-lg-offset-3 col-lg-6"><iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=2299962022&app_id=1" width="300" height="300"></iframe></div></div><img class="pluie" src="img/et1.gif" alt="Reste"></div>';
     }
-
+}
+}
 ?>
 		</div>
 
